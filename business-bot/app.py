@@ -50,7 +50,7 @@ def index():
             print("❌ Error:", e)
             message = f"❌ Error: {str(e)}"
 
-    return render_template("index.html", message=message, profile_url=profile_url, last_action=action)
+    return render_template("index.html", message=message, profile_url=profile_url, last_action="update_profile")
 
 if __name__ == "__main__":
     app.run(debug=True)
