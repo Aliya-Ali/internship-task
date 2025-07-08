@@ -9,15 +9,13 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    message = ""
+    message = "hi how can I help you"
     profile_url = ""
 
     if request.method == "POST":
         action = "update_profile"
         username = "WspAli1"
 
-        print("hi how can i help you")
-        message = f"hi how can i help you"
 
         try:
             # Read sheet data
