@@ -9,4 +9,5 @@ google-auth-httplib2
 google-auth-oauthlib 
 gspread
 instagrapi
-Pillow>=8.1.1  
+Pillow>=8.1.1
+python-dotenv
