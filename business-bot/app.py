@@ -4,17 +4,21 @@ from bot.instagram import login_instagram, update_full_profile, get_profile_url,
 from bot.drive_fetcher import authenticate_drive
 import os
 from bot.image import get_random_image_from_folder
-
+import os
+from dotenv import load_dotenv
+load_dotenv()
 app = Flask(__name__)
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
     message = "hi how can I help you"
     profile_url = ""
-
+    action = "update_profile"
     if request.method == "POST":
-        action = "update_profile"
-        username = "WspAli1"
+        
+        username = "AliyasDream"
+        
 
 
         try:
@@ -22,7 +26,8 @@ def index():
             sheet = connect_to_sheet("Cut Cost Roofing Info")
             print("✅ Connected to sheet")
             data = get_vertical_business_data(sheet)
-            password = data['Password']
+            password = os.getenv("password")
+            print(password)
 
             # Login to Instagram
             cl = login_instagram(username, password)
