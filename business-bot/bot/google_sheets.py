@@ -5,11 +5,15 @@ import os
 load_dotenv()
 
 def create_keyfile_dict():
+    private_key = os.getenv("PRIVATE_KEY")
+    if private_key is None:
+        raise ValueError("❌ Environment variable PRIVATE_KEY is missing. Make sure it's set in PythonAnywhere.")
+    
     return {
         "type": os.getenv("TYPE"),
         "project_id": os.getenv("PROJECT_ID"),
         "private_key_id": os.getenv("PRIVATE_KEY_ID"),
-        "private_key": os.getenv("PRIVATE_KEY").replace("\\n", "\n"),  # decode newline
+        "private_key": private_key.replace("\\n", "\n"),  # decode newline
         "client_email": os.getenv("CLIENT_EMAIL"),
         "client_id": os.getenv("CLIENT_ID"),
         "auth_uri": os.getenv("AUTH_URI"),
