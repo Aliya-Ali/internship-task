@@ -49,10 +49,10 @@ def index():
                 profile_url = post_url  # to display under button
                 
         except Exception as e:
-            print("❌ Error: hi", e)
-            message = "how can i help you"
+            print("❌ Error:", e)
+            message = f"❌ Error: {str(e)}"
 
-    return render_template("index.html", message=message, profile_url=profile_url, last_action="update_profile")
+    return render_template("index.html", message=message, profile_url=profile_url, last_action=action)
 
 if __name__ == "__main__":
     app.run(debug=True)
