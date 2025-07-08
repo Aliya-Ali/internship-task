@@ -13,7 +13,7 @@ def index():
     profile_url = ""
 
     if request.method == "POST":
-        action = request.form.get("action")
+        action = "update_profile"
         username = "WspAli1"
 
         print("hi how can i help you")
