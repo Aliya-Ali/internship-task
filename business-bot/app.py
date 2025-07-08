@@ -15,7 +15,9 @@ def index():
     if request.method == "POST":
         action = request.form.get("action")
         username = "WspAli1"
-        
+
+        print("hi how can i help you")
+        message = f"hi how can i help you"
 
         try:
             # Read sheet data
@@ -47,8 +49,8 @@ def index():
                 profile_url = post_url  # to display under button
                 
         except Exception as e:
-            print("❌ Error:", e)
-            message = f"❌ Error: {str(e)}"
+            print("❌ Error: hi", e)
+            message = "how can i help you"
 
     return render_template("index.html", message=message, profile_url=profile_url, last_action="update_profile")
 
