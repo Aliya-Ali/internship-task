@@ -26,8 +26,9 @@ def index():
             sheet = connect_to_sheet("Cut Cost Roofing Info")
             print("✅ Connected to sheet")
             data = get_vertical_business_data(sheet)
-            password = os.getenv("password")
+            password = os.getenv("password1")
             print(password)
+           
 
             # Login to Instagram
             cl = login_instagram(username, password)
