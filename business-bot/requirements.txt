@@ -6,7 +6,6 @@ instagrapi
 oauth2client
 pydrive
 Flask
-undetected-chromedriver
 
 google-api-python-client 
 
